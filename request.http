@@ -1,0 +1,37 @@
+@host = http:/localhost:8080/
+
+###
+# Requisição GET para listar todos
+GET {{host}}
+
+###
+# Requisição GET para listar detalhes de 1 registro
+GET {{host}}/detalhes/3
+
+###
+# Requisição POST para cadastrar um novo contato
+POST {{host}}/adicionar
+Content-Type: application/json
+
+{
+    "nome": "Asdrubal",
+    "tipo": "Comercial",
+    "telefone": "5555-1111"
+}
+
+###
+# Requisição POST para editar um contato
+POST {{host}}/adicionar
+Content-Type: application/json
+
+{
+    "id": 3,
+    "nome": "Clotilde",
+    "tipo": "Residencial",
+    "telefone": "2222-2222"
+}
+
+###
+# Requisição GET para deletar um contato
+GET {{host}}/deletar/1
+
